@@ -6,7 +6,7 @@
   <div class="cards">
     <% @flats.each do |flat| %>
       <div class="card-category">
-        <%#= image_tag "source", alt: "alttext" %>
+        <%= image_tag "https://source.unsplash.com/random?home", class: "card-img-top w-100 h-50" %>
         <div class="card-body">
           <h5 class="card-title"><%= flat.name %></h5>
           <p class="card-text"><%= flat.address %></p>
@@ -16,7 +16,11 @@
           </span>
         </div>
         <div class="info-bar">
-          <%= link_to "More Info", flat_path(flat) %>
+          <span>
+            <%= link_to "More Info", flat_path(flat) %>
+            <%= link_to "Edit", edit_flat_path(flat), style: 'color: green'%>
+            <%= link_to "Delete", flat_path(flat), method: :delete, style: 'color: red' %>
+          </span>
         </div>
 
       </div>
