@@ -1,7 +1,7 @@
 Flat.destroy_all
 
 10.times do
-  Flat.create(
+  Flat.create!(
     name: Faker::Name.name_with_middle,
     address: Faker::Address.street_address,
     description: Faker::Quote.famous_last_words,
